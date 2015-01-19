@@ -32,6 +32,23 @@ namespace Mathgician
 
         private static void PrintPrimesSequence()
         {
+           // 2, 3, 5, 7, 9, 13
+            // primeList.ForEach( i % primeList [i] == 0)
+            
+            List<int> primeList = new List<int>();
+            int primeCandidate = 0;
+            primeList.Add(0);
+            for (int i = 0; i < primeList.Count; i++)
+            {
+                primeCandidate = i;
+               
+                    Console.WriteLine(primeCandidate);
+                    primeList.Add(primeCandidate);
+                    primeList.ForEach(Console.WriteLine);
+                
+               
+                System.Threading.Thread.Sleep(300);
+            }
 
             Console.WriteLine("Well, Actually... I Lied..");
         }
