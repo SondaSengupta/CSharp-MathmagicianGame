@@ -36,21 +36,30 @@ namespace Mathgician
             // primeList.ForEach( i % primeList [i] == 0)
             
             List<int> primeList = new List<int>();
-            int primeCandidate = 0;
-            primeList.Add(0);
-            for (int i = 0; i < primeList.Count; i++)
+            primeList.Add(2);
+            int primeCandidate = 3;
+            Console.WriteLine(2);
+            while (true)
             {
-                primeCandidate = i;
-               
+            
+                bool isPrime = true;
+                for (int i = 0; i < primeList.Count; i++)
+                {
+                    if (primeCandidate % primeList[i] == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
+                }
+                if (isPrime == true)
+                {
                     Console.WriteLine(primeCandidate);
                     primeList.Add(primeCandidate);
-                    primeList.ForEach(Console.WriteLine);
-                
-               
+                }
                 System.Threading.Thread.Sleep(300);
+                primeCandidate += 2;
             }
-
-            Console.WriteLine("Well, Actually... I Lied..");
+           
         }
 
         private static void PrintFibonacciSequence()
